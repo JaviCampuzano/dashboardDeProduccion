@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "defects",
+  "info": {
+    "singularName": "defect",
+    "pluralName": "defects",
+    "displayName": "defect"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pieces": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::piece.piece",
+      "inversedBy": "defects"
+    },
+    "defect_type": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "location_x": {
+      "type": "decimal"
+    },
+    "location_y": {
+      "type": "decimal"
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "aiConfidence": {
+      "type": "string"
+    },
+    "stat": {
+      "type": "enumeration",
+      "enum": [
+        "not reviewed",
+        "in progress",
+        "reviewed"
+      ]
+    }
+  }
+}

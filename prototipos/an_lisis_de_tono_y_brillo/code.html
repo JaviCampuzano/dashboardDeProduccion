@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cosentino Quality Tracker - Surface Analysis</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1173d4",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 flex-shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-y-auto">
+<div class="flex flex-col h-full p-4">
+<div class="flex items-center gap-3 mb-8 px-2">
+<div class="bg-primary/10 rounded-full p-2">
+<span class="material-symbols-outlined text-primary">analytics</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-slate-100 text-sm font-bold leading-tight">Cosentino Admin</h1>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal">Quality Control Division</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1 flex-grow">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1">monitoring</span>
+<span class="text-sm font-medium">Quality Tracker</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+<span class="text-sm font-medium">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">description</span>
+<span class="text-sm font-medium">Reports</span>
+</a>
+<div class="mt-auto pt-4">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</div>
+</nav>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col overflow-hidden">
+<!-- Header -->
+<header class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-8 py-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-2xl">layers</span>
+<h2 class="text-lg font-bold tracking-tight">Surface Analysis: Tone &amp; Brightness</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="bg-slate-100 dark:bg-slate-800 border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary w-64" placeholder="Search batch or slab ID..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg relative">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-slate-900"></span>
+</button>
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<div class="flex-1 overflow-y-auto p-8">
+<!-- Top Stats & Controls -->
+<div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+<div>
+<h3 class="text-3xl font-black text-slate-900 dark:text-slate-100">Batch Analysis #7829-CZ</h3>
+<p class="text-slate-500 dark:text-slate-400 mt-1">Real-time comparison of slab patterns against master samples.</p>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800">
+<div class="flex flex-col items-center px-4 border-r border-slate-200 dark:border-slate-800">
+<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Status</span>
+<span class="text-emerald-500 font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+                                COMPLIANT
+                            </span>
+</div>
+<div class="flex flex-col items-center px-4">
+<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Tolerance</span>
+<span class="text-slate-900 dark:text-slate-100 font-bold">±0.4 ΔE</span>
+</div>
+</div>
+</div>
+<!-- Tabs -->
+<div class="flex border-b border-slate-200 dark:border-slate-800 mb-8 overflow-x-auto whitespace-nowrap">
+<button class="px-6 py-4 text-sm font-bold text-slate-500 border-b-2 border-transparent">Slab Comparison</button>
+<button class="px-6 py-4 text-sm font-bold text-primary border-b-2 border-primary bg-primary/5">Heatmap Analysis</button>
+<button class="px-6 py-4 text-sm font-bold text-slate-500 border-b-2 border-transparent">Historical Data</button>
+<button class="px-6 py-4 text-sm font-bold text-slate-500 border-b-2 border-transparent">CIELAB Parameters</button>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<!-- Visual Comparison Grid -->
+<div class="col-span-12 lg:col-span-8 space-y-8">
+<div class="grid grid-cols-2 gap-4">
+<!-- Current Slab -->
+<div class="relative group">
+<div class="absolute top-4 left-4 z-10 bg-black/50 backdrop-blur-md text-white px-3 py-1 rounded text-xs font-bold uppercase tracking-widest">
+                                    Current Slab ID: 0922-A
+                                </div>
+<div class="aspect-[4/3] rounded-xl overflow-hidden bg-slate-200 relative border-2 border-transparent hover:border-primary transition-all">
+<img class="w-full h-full object-cover" data-alt="Close up of white marble slab with grey veins" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM133txZT5BhzV-Md5-fPuN4WQvOL3fhKRINPNLhK8NKd0bRriQy2ZS-kNmW_MubKmU3idGbpAm4MQkI3j0Ao-JqCCu161Jj_NSW7zyDIqvN56ZtkG3pQeUIUDmoLN2zhI2BjTEgAvcahM8umma7vgOh0HgbUhHdmiV2aW748aZifbbaM9HmsvWmLNz5ybmSwQATJY9fo_Nu0O4mGJm0bI_mYRQ9pFSJvNkNj0OtXV7E36eQ1q2sqlmTCWkbT1YO-5tFVeYEF5OmQ"/>
+<!-- Heatmap Overlay Simulation -->
+<div class="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-transparent to-red-500/30 mix-blend-overlay"></div>
+<div class="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_50%_50%,_rgba(255,0,0,0.4),_transparent_70%)]"></div>
+</div>
+</div>
+<!-- Master Sample -->
+<div class="relative">
+<div class="absolute top-4 left-4 z-10 bg-primary/80 backdrop-blur-md text-white px-3 py-1 rounded text-xs font-bold uppercase tracking-widest">
+                                    Master Sample (Reference)
+                                </div>
+<div class="aspect-[4/3] rounded-xl overflow-hidden bg-slate-200 border-2 border-slate-200 dark:border-slate-800">
+<img class="w-full h-full object-cover grayscale-[0.2]" data-alt="Master reference marble sample with consistent pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVwVz13i7fn2a330hMhs2LLUUHQZf_Qh7v-YgbfU5MX9oUQKLRcGnh0EckSXbrAKOfj-L3rxFpjfcRNhcXOfsMjLbKT1r8bDqN-wzDlStlJURBjqvMB4O_uaf1i7KlHWExurfjFcj1EinC69Dv5szeCH_MmE6S0BGdxt5PlCkrdJYBmZMu35uLGXB40Zf1-yYBvq4Y8pLx1hqRduJpvJxd99NUsbcAlZSgVv6hK6XFFiHaDU0HmLjo_phAjsEIXN84d-T1-6t5Lt4"/>
+</div>
+</div>
+</div>
+<!-- Difference Map -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-slate-200 dark:border-slate-800">
+<div class="flex items-center justify-between mb-4">
+<h4 class="font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">difference</span>
+                                    Surface Deviation Map
+                                </h4>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold text-slate-400">Low Deviation</span>
+<div class="h-2 w-32 rounded-full bg-gradient-to-r from-blue-500 via-green-400 to-red-500"></div>
+<span class="text-[10px] font-bold text-slate-400">High Deviation</span>
+</div>
+</div>
+<div class="h-24 w-full bg-slate-100 dark:bg-slate-800 rounded-lg relative overflow-hidden flex items-center justify-center border border-dashed border-slate-300 dark:border-slate-700">
+<div class="flex gap-4">
+<div class="w-20 h-12 bg-blue-500/10 rounded border border-blue-500/20 flex flex-col items-center justify-center">
+<span class="text-[10px] uppercase font-bold text-blue-500">Zone A</span>
+<span class="text-xs font-bold">0.12 ΔE</span>
+</div>
+<div class="w-20 h-12 bg-green-500/10 rounded border border-green-500/20 flex flex-col items-center justify-center">
+<span class="text-[10px] uppercase font-bold text-green-500">Zone B</span>
+<span class="text-xs font-bold">0.05 ΔE</span>
+</div>
+<div class="w-20 h-12 bg-red-500/10 rounded border border-red-500/20 flex flex-col items-center justify-center">
+<span class="text-[10px] uppercase font-bold text-red-500">Zone C</span>
+<span class="text-xs font-bold">0.38 ΔE</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Side Metrics Panel -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-800">
+<h4 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-6">CIELAB Metrics</h4>
+<div class="space-y-6">
+<!-- Metric L -->
+<div>
+<div class="flex justify-between items-end mb-2">
+<span class="text-sm font-bold">L* (Brightness)</span>
+<span class="text-lg font-black text-primary">94.2</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[94.2%]"></div>
+</div>
+<div class="flex justify-between mt-1">
+<span class="text-[10px] text-slate-400">Target: 94.0</span>
+<span class="text-[10px] font-bold text-emerald-500">+0.2 (OK)</span>
+</div>
+</div>
+<!-- Metric a -->
+<div>
+<div class="flex justify-between items-end mb-2">
+<span class="text-sm font-bold">a* (Red/Green)</span>
+<span class="text-lg font-black text-primary">-0.8</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full relative">
+<div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-slate-300 dark:bg-slate-600"></div>
+<div class="h-full bg-primary rounded-full w-[10%] absolute left-[42%]"></div>
+</div>
+<div class="flex justify-between mt-1">
+<span class="text-[10px] text-slate-400">Target: -1.0</span>
+<span class="text-[10px] font-bold text-emerald-500">+0.2 (OK)</span>
+</div>
+</div>
+<!-- Metric b -->
+<div>
+<div class="flex justify-between items-end mb-2">
+<span class="text-sm font-bold">b* (Yellow/Blue)</span>
+<span class="text-lg font-black text-primary">2.4</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[65%]"></div>
+</div>
+<div class="flex justify-between mt-1">
+<span class="text-[10px] text-slate-400">Target: 2.5</span>
+<span class="text-[10px] font-bold text-emerald-500">-0.1 (OK)</span>
+</div>
+</div>
+</div>
+<hr class="my-6 border-slate-200 dark:border-slate-800"/>
+<div class="bg-primary/5 rounded-lg p-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-sm">info</span>
+<span class="text-xs font-bold text-primary uppercase">Summary Analysis</span>
+</div>
+<p class="text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+                                    The slab shows high color consistency. The slight deviation in Zone C is within the acceptable 0.4 ΔE threshold. No intervention required for this batch.
+                                </p>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2 bg-primary text-white font-bold py-3 rounded-xl hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-sm">check</span>
+                                Approve
+                            </button>
+<button class="flex items-center justify-center gap-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-bold py-3 rounded-xl hover:bg-slate-50 transition-all">
+<span class="material-symbols-outlined text-sm">flag</span>
+                                Flag Batch
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

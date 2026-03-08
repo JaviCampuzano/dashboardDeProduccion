@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pieces",
+  "info": {
+    "singularName": "piece",
+    "pluralName": "pieces",
+    "displayName": "piece"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "idPiece": {
+      "type": "uid"
+    },
+    "sku": {
+      "type": "string"
+    },
+    "batch": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::batch.batch"
+    },
+    "dimensions": {
+      "type": "string"
+    },
+    "thickness": {
+      "type": "string"
+    },
+    "polishing_grade": {
+      "type": "string"
+    },
+    "surface_brightness": {
+      "type": "string"
+    },
+    "tone_homogeneity": {
+      "type": "string"
+    },
+    "quality_status": {
+      "type": "string"
+    },
+    "inspection_date": {
+      "type": "date"
+    },
+    "ai_recommendation": {
+      "type": "string"
+    },
+    "defects": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::defect.defect",
+      "mappedBy": "pieces"
+    }
+  }
+}

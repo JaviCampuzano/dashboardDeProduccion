@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "alerts",
+  "info": {
+    "singularName": "alert",
+    "pluralName": "alerts",
+    "displayName": "alert"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "idAlert": {
+      "type": "uid"
+    },
+    "type": {
+      "type": "string"
+    },
+    "dateTime": {
+      "type": "date"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "production_lines",
+  "info": {
+    "singularName": "production-line",
+    "pluralName": "production-lines",
+    "displayName": "production-line"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "line_number": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "plant_location": {
+      "type": "string"
+    },
+    "process_type": {
+      "type": "string"
+    },
+    "stat": {
+      "type": "enumeration",
+      "enum": [
+        "waiting",
+        "in progress",
+        "done"
+      ]
+    },
+    "batch": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::batch.batch",
+      "inversedBy": "production_lines"
+    }
+  }
+}

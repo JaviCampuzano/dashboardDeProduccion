@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#1173d4",
+                "background-light": "#f6f7f8",
+                "background-dark": "#101922",
+              },
+              fontFamily: {
+                "display": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<title>Cosentino Quality Tracker</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col h-full">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined">diamond</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-slate-100 text-sm font-bold uppercase tracking-wider">Cosentino</h1>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium">Quality Tracker v2.0</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 py-6 space-y-2 overflow-y-auto">
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg bg-primary text-white font-medium transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all" href="#">
+<span class="material-symbols-outlined">report_problem</span>
+<span class="text-sm">Registrar Fallo</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm">Lotes</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="text-sm">Historial</span>
+</a>
+<div class="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800">
+<p class="px-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Administración</p>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm">Configuración</span>
+</a>
+</div>
+</nav>
+<div class="p-4 border-t border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-3 p-2">
+<div class="size-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-500 text-sm">person</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-slate-900 dark:text-slate-100">Operador 42</span>
+<span class="text-[10px] text-slate-500">Turno Mañana</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark p-8">
+<header class="mb-10">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h2 class="text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tight">Dashboard de Calidad</h2>
+<p class="text-slate-500 dark:text-slate-400 mt-1">Supervisión en tiempo real de la línea de producción</p>
+</div>
+<div class="flex items-center gap-3 bg-white dark:bg-slate-900 p-2 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800">
+<div class="px-3 py-1 border-r border-slate-200 dark:border-slate-800">
+<span class="text-[10px] block font-bold uppercase text-slate-400">Estado Planta</span>
+<span class="text-sm font-bold text-green-500 flex items-center gap-1">
+<span class="size-2 rounded-full bg-green-500"></span> Operativo
+                            </span>
+</div>
+<div class="px-3 py-1">
+<span class="text-[10px] block font-bold uppercase text-slate-400">Fecha Actual</span>
+<span class="text-sm font-bold">24 Oct 2023</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Action Cards -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+<div class="bg-white dark:bg-slate-900 p-1 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 group cursor-pointer hover:border-primary transition-all">
+<div class="aspect-video w-full rounded-lg overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-t from-red-600/60 to-transparent"></div>
+<div class="absolute inset-0 bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-red-500 text-5xl">warning</span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-slate-900 dark:text-slate-100 group-hover:text-primary transition-colors">Registrar Fallo</h3>
+<span class="text-[10px] px-2 py-0.5 rounded-full bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400 font-bold">URGENTE</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4">Reporte inmediato de incidencias técnicas en piezas o maquinaria.</p>
+<button class="w-full py-2 bg-slate-100 dark:bg-slate-800 group-hover:bg-primary group-hover:text-white rounded-lg text-sm font-bold transition-all flex items-center justify-center gap-2">
+                            Acceso rápido <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-1 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 group cursor-pointer hover:border-primary transition-all">
+<div class="aspect-video w-full rounded-lg overflow-hidden relative">
+<div class="absolute inset-0 bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-5xl">inventory_2</span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-slate-900 dark:text-slate-100 group-hover:text-primary transition-colors">Ver Lotes</h3>
+<span class="text-[10px] px-2 py-0.5 rounded-full bg-primary/10 text-primary dark:bg-primary/20 font-bold">HOY</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4">Control y trazabilidad de los lotes en producción actualmente.</p>
+<button class="w-full py-2 bg-slate-100 dark:bg-slate-800 group-hover:bg-primary group-hover:text-white rounded-lg text-sm font-bold transition-all flex items-center justify-center gap-2">
+                            Consultar <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-1 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 group cursor-pointer hover:border-primary transition-all">
+<div class="aspect-video w-full rounded-lg overflow-hidden relative">
+<div class="absolute inset-0 bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400 text-5xl">manage_search</span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-slate-900 dark:text-slate-100 group-hover:text-primary transition-colors">Histórico</h3>
+<span class="text-[10px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400 font-bold">BASE DATOS</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4">Registro histórico de piezas finalizadas y auditorías de calidad pasadas.</p>
+<button class="w-full py-2 bg-slate-100 dark:bg-slate-800 group-hover:bg-primary group-hover:text-white rounded-lg text-sm font-bold transition-all flex items-center justify-center gap-2">
+                            Filtros avanzados <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Daily Production Metrics -->
+<section>
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">analytics</span>
+                        Métricas de Producción Diaria
+                    </h3>
+<button class="text-sm font-medium text-primary hover:underline">Ver reporte completo</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Total Piezas</p>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-black text-slate-900 dark:text-slate-100">1,284</span>
+<span class="text-xs font-bold text-green-500">+12%</span>
+</div>
+<div class="w-full h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full mt-4 overflow-hidden">
+<div class="bg-primary h-full w-[78%]"></div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Piezas OK</p>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-black text-slate-900 dark:text-slate-100">1,242</span>
+<span class="text-xs font-bold text-green-500">96.7%</span>
+</div>
+<div class="w-full h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full mt-4 overflow-hidden">
+<div class="bg-green-500 h-full w-[96%]"></div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Rechazos (QC)</p>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-black text-slate-900 dark:text-slate-100">42</span>
+<span class="text-xs font-bold text-red-500">-3.2%</span>
+</div>
+<div class="w-full h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full mt-4 overflow-hidden">
+<div class="bg-red-500 h-full w-[15%]"></div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Tiempo Activo</p>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-black text-slate-900 dark:text-slate-100">7.2h</span>
+<span class="text-xs font-bold text-slate-400">/ 8h</span>
+</div>
+<div class="w-full h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full mt-4 overflow-hidden">
+<div class="bg-primary/50 h-full w-[90%]"></div>
+</div>
+</div>
+</div>
+<!-- Recent Activity Table / Minimalist -->
+<div class="mt-8 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+<div class="px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+<h4 class="font-bold text-slate-900 dark:text-slate-100 uppercase text-xs tracking-widest">Últimas Alertas registradas</h4>
+<span class="material-symbols-outlined text-slate-400">filter_list</span>
+</div>
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800/50">
+<th class="px-6 py-3 text-[10px] font-bold text-slate-400 uppercase tracking-wider">ID Pieza</th>
+<th class="px-6 py-3 text-[10px] font-bold text-slate-400 uppercase tracking-wider">Lote</th>
+<th class="px-6 py-3 text-[10px] font-bold text-slate-400 uppercase tracking-wider">Defecto</th>
+<th class="px-6 py-3 text-[10px] font-bold text-slate-400 uppercase tracking-wider">Estado</th>
+<th class="px-6 py-3 text-[10px] font-bold text-slate-400 uppercase tracking-wider text-right">Acción</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4 text-sm font-medium">#CS-98431</td>
+<td class="px-6 py-4 text-sm text-slate-500">DK-OCT-02</td>
+<td class="px-6 py-4 text-sm text-slate-500">Fisura superficial</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 rounded-full bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400 text-[10px] font-bold uppercase">Rechazado</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:text-primary/80 material-symbols-outlined">visibility</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4 text-sm font-medium">#CS-98429</td>
+<td class="px-6 py-4 text-sm text-slate-500">DK-OCT-02</td>
+<td class="px-6 py-4 text-sm text-slate-500">Error de Calibre</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400 text-[10px] font-bold uppercase">En Revisión</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:text-primary/80 material-symbols-outlined">visibility</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</main>
+</div>
+</body></html>

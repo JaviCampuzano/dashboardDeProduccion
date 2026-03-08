@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cosentino Quality Tracker - Batch Diagnosis</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1173d4",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased font-display">
+<div class="flex h-screen overflow-hidden">
+<aside class="w-64 flex-shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800 flex items-center gap-3">
+<div class="size-10 rounded-full bg-primary flex items-center justify-center text-white overflow-hidden">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<div>
+<h1 class="text-sm font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider">Quality Tracker</h1>
+<p class="text-xs text-slate-500 dark:text-slate-400">Batch Diagnosis</p>
+</div>
+</div>
+<nav class="flex-1 p-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">verified</span>
+<span class="text-sm font-medium">Calidad</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Lotes</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary rounded-lg" href="#">
+<span class="material-symbols-outlined text-primary">search_check</span>
+<span class="text-sm font-medium">Diagnóstico</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Configuración</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-3 px-3 py-2 bg-slate-50 dark:bg-slate-800 rounded-xl">
+<div class="size-8 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-primary">person</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-xs font-bold truncate">Operator X-102</p>
+<p class="text-[10px] text-slate-500 uppercase">Supervisor</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-sm">logout</span>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col min-w-0 overflow-hidden">
+<header class="h-16 flex-shrink-0 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-8">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-400">factory</span>
+<h2 class="text-lg font-semibold tracking-tight">Cosentino Quality Tracker</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative max-w-xs hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-lg text-sm w-64 focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Buscar lote..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="size-10 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button class="size-10 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined text-[20px]">help_outline</span>
+</button>
+</div>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto p-8 space-y-8">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+<div>
+<nav class="flex items-center gap-2 text-xs text-slate-500 mb-2">
+<span>Control de Calidad</span>
+<span class="material-symbols-outlined text-[12px]">chevron_right</span>
+<span>Diagnóstico</span>
+<span class="material-symbols-outlined text-[12px]">chevron_right</span>
+<span class="text-primary font-medium">Lote #B2944-2023</span>
+</nav>
+<h3 class="text-3xl font-bold tracking-tight">Diagnóstico de Lote</h3>
+<p class="text-slate-500 dark:text-slate-400 mt-1">Comparativa de patrones y análisis de desviación técnica automatizada.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="inline-flex items-center gap-2 px-4 py-2.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-sm font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-[20px]">history</span>
+                            Ver Historial
+                        </button>
+<button class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-white rounded-lg text-sm font-semibold hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all">
+<span class="material-symbols-outlined text-[20px]">description</span>
+                            Generar Informe Técnico
+                        </button>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-1.5 rounded-xl border border-slate-200 dark:border-slate-800 flex inline-flex w-fit">
+<button class="px-6 py-2 rounded-lg text-sm font-semibold text-slate-500 hover:text-slate-700 transition-colors">
+                        Patrón de Referencia
+                    </button>
+<button class="px-6 py-2 rounded-lg text-sm font-semibold bg-primary text-white shadow-sm">
+                        Escaneado Real (Lote #B2944)
+                    </button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 space-y-8">
+<div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
+<div>
+<h4 class="text-base font-bold">Patrón vs Escaneado (Radar de Desviación)</h4>
+<p class="text-xs text-slate-500">Métricas comparativas en tiempo real</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<div class="size-2.5 rounded-full bg-primary/40"></div>
+<span class="text-xs font-medium text-slate-500">Referencia</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="size-2.5 rounded-full bg-primary"></div>
+<span class="text-xs font-medium text-slate-500">Actual</span>
+</div>
+</div>
+</div>
+<div class="flex-1 p-8 flex flex-col items-center justify-center min-h-[400px]">
+<div class="relative w-full max-w-md aspect-square flex items-center justify-center">
+<div class="absolute inset-0 border-[1px] border-slate-100 dark:border-slate-800 rounded-full"></div>
+<div class="absolute inset-4 border-[1px] border-slate-100 dark:border-slate-800 rounded-full"></div>
+<div class="absolute inset-12 border-[1px] border-slate-100 dark:border-slate-800 rounded-full"></div>
+<div class="absolute inset-24 border-[1px] border-slate-100 dark:border-slate-800 rounded-full"></div>
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-6 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Textura</div>
+<div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-6 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Opacidad</div>
+<div class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-8 -rotate-90 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Brillo</div>
+<div class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-8 rotate-90 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Rugosidad</div>
+<svg class="w-full h-full transform -rotate-12" viewbox="0 0 100 100">
+<polygon class="fill-primary/10 stroke-primary stroke-2" points="50,10 80,35 75,75 25,80 15,40"></polygon>
+<polygon class="fill-none stroke-primary/30 stroke-[0.5] stroke-dasharray" points="50,15 75,38 72,72 28,76 18,42"></polygon>
+<circle class="fill-primary" cx="50" cy="10" r="1.5"></circle>
+<circle class="fill-primary" cx="80" cy="35" r="1.5"></circle>
+<circle class="fill-primary" cx="75" cy="75" r="1.5"></circle>
+<circle class="fill-primary" cx="25" cy="80" r="1.5"></circle>
+<circle class="fill-primary" cx="15" cy="40" r="1.5"></circle>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
+<p class="text-sm font-medium text-slate-500">Coincidencia General</p>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">98.2%</span>
+<span class="text-emerald-500 text-sm font-semibold">+0.5% vs previo</span>
+</div>
+<div class="mt-4 w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full w-[98.2%]"></div>
+</div>
+</div>
+<div class="bg-emerald-50 dark:bg-emerald-950/20 p-6 rounded-2xl border border-emerald-100 dark:border-emerald-900/30">
+<div class="flex items-center gap-3 mb-4">
+<div class="size-10 rounded-full bg-emerald-500 flex items-center justify-center text-white">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<h4 class="text-lg font-bold text-emerald-900 dark:text-emerald-400">Lote Homogéneo</h4>
+</div>
+<p class="text-sm text-emerald-800 dark:text-emerald-500/80 leading-relaxed">
+                                El análisis técnico confirma que el lote cumple con todos los estándares de calidad definidos por el patrón de referencia. Sin desviaciones críticas detectadas.
+                            </p>
+<div class="mt-4 flex gap-2">
+<span class="px-2.5 py-1 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-400 text-[10px] font-bold uppercase rounded">Aprobado</span>
+<span class="px-2.5 py-1 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-400 text-[10px] font-bold uppercase rounded">Sincronizado</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
+<h4 class="text-sm font-bold mb-4">Detalle de Puntos de Control</h4>
+<div class="space-y-4">
+<div class="flex items-center justify-between text-sm">
+<span class="text-slate-500">Punto A: Densidad</span>
+<span class="font-semibold">0.02% Desv.</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-slate-500">Punto B: Tonalidad</span>
+<span class="font-semibold text-emerald-500">Perfect Match</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-slate-500">Punto C: Porosidad</span>
+<span class="font-semibold">0.14% Desv.</span>
+</div>
+<div class="flex items-center justify-between text-sm border-t border-slate-100 dark:border-slate-800 pt-4">
+<span class="font-bold">Total Puntos</span>
+<span class="font-bold text-primary">12 OK</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+<div class="px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+<h4 class="text-sm font-bold uppercase tracking-wider text-slate-500">Muestreo Reciente del Lote</h4>
+<button class="text-xs font-bold text-primary">Exportar Tabla</button>
+</div>
+<table class="w-full text-left">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800/50">
+<th class="px-6 py-3 text-[10px] font-bold text-slate-400 uppercase tracking-widest">ID Escaneo</th>
+<th class="px-6 py-3 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Hora</th>
+<th class="px-6 py-3 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Resultado</th>
+<th class="px-6 py-3 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Confianza</th>
+<th class="px-6 py-3 text-[10px] font-bold text-slate-400 uppercase tracking-widest text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr>
+<td class="px-6 py-4 text-sm font-medium">#SC-9021</td>
+<td class="px-6 py-4 text-sm text-slate-500">09:42 AM</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 text-xs font-semibold rounded">Sin desviación</span>
+</td>
+<td class="px-6 py-4 text-sm">99.1%</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary"><span class="material-symbols-outlined text-[20px]">visibility</span></button>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 text-sm font-medium">#SC-9020</td>
+<td class="px-6 py-4 text-sm text-slate-500">09:38 AM</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 text-xs font-semibold rounded">Sin desviación</span>
+</td>
+<td class="px-6 py-4 text-sm">98.4%</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary"><span class="material-symbols-outlined text-[20px]">visibility</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+</div>
+</body></html>

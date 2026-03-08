@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cosentino Quality Tracker - RCA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1173d4",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col shrink-0">
+<div class="p-6">
+<div class="flex items-center gap-3">
+<div class="bg-primary/10 rounded-full p-2">
+<span class="material-symbols-outlined text-primary">analytics</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-slate-100 text-sm font-bold leading-none">Cosentino Admin</h1>
+<p class="text-slate-500 dark:text-slate-400 text-xs mt-1">Quality Tracker</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-3 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">factory</span>
+<span class="text-sm font-medium">Production</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">check_circle</span>
+<span class="text-sm font-medium">Quality Control</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary rounded-lg" href="#">
+<span class="material-symbols-outlined text-primary">search_insights</span>
+<span class="text-sm font-medium">Root Cause Analysis</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<div class="bg-slate-50 dark:bg-slate-800 p-3 rounded-lg flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white text-xs font-bold" data-alt="User profile placeholder">JD</div>
+<div class="flex-1 overflow-hidden">
+<p class="text-xs font-semibold truncate">John Doe</p>
+<p class="text-[10px] text-slate-500 truncate">Lead Quality Auditor</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col min-w-0 overflow-y-auto">
+<header class="h-16 border-b border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 backdrop-blur flex items-center justify-between px-8 shrink-0">
+<div class="flex items-center gap-4">
+<h2 class="text-xl font-bold tracking-tight">Root Cause Analysis (RCA)</h2>
+<span class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Live Analysis</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-3 py-1.5 border border-slate-200 dark:border-slate-800 rounded text-sm font-medium flex items-center gap-2 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                    Last 30 Days
+                </button>
+<button class="bg-primary text-white px-4 py-1.5 rounded text-sm font-medium hover:bg-primary/90 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">ios_share</span>
+                    Export Report
+                </button>
+</div>
+</header>
+<div class="p-8 space-y-8">
+<!-- Header Text -->
+<div>
+<p class="text-slate-500 dark:text-slate-400 max-w-2xl leading-relaxed">
+                    Perform a deep dive into production defects and maintain end-to-end traceability from raw material intake to final inspection.
+                </p>
+</div>
+<div class="grid grid-cols-12 gap-6">
+<!-- Bar Chart Section -->
+<div class="col-span-12 lg:col-span-8 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-sm">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h3 class="font-bold text-lg">Top 5 Defects by Frequency</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-3xl font-black text-slate-900 dark:text-slate-100">1,240</span>
+<span class="text-red-500 text-sm font-medium flex items-center">
+<span class="material-symbols-outlined text-xs">trending_down</span>
+                                    5.2%
+                                </span>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-5 gap-4 items-end h-48 px-4">
+<div class="group flex flex-col items-center gap-3">
+<div class="w-full bg-primary/20 group-hover:bg-primary/30 rounded-t-lg transition-all" style="height: 45%;"></div>
+<span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Cracks</span>
+</div>
+<div class="group flex flex-col items-center gap-3">
+<div class="w-full bg-primary/60 group-hover:bg-primary/70 rounded-t-lg transition-all" style="height: 75%;"></div>
+<span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Stains</span>
+</div>
+<div class="group flex flex-col items-center gap-3">
+<div class="w-full bg-primary rounded-t-lg transition-all" style="height: 95%;"></div>
+<span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Chips</span>
+</div>
+<div class="group flex flex-col items-center gap-3">
+<div class="w-full bg-primary/40 group-hover:bg-primary/50 rounded-t-lg transition-all" style="height: 60%;"></div>
+<span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Pores</span>
+</div>
+<div class="group flex flex-col items-center gap-3">
+<div class="w-full bg-primary/10 group-hover:bg-primary/20 rounded-t-lg transition-all" style="height: 30%;"></div>
+<span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Edges</span>
+</div>
+</div>
+</div>
+<!-- AI Insights Panel -->
+<div class="col-span-12 lg:col-span-4 bg-primary/5 dark:bg-primary/10 border border-primary/20 rounded-xl p-6 shadow-sm">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+<h3 class="font-bold text-primary">AI Diagnostic Suggestions</h3>
+</div>
+<div class="space-y-4">
+<div class="bg-white dark:bg-slate-800 p-4 rounded-lg border border-primary/10">
+<h4 class="text-xs font-bold text-primary uppercase mb-2">High Correlation</h4>
+<p class="text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                                85% of <strong>Cracking</strong> cases coincide with temperature spikes in the <strong>Oven-300</strong> unit during Shift B.
+                            </p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-4 rounded-lg border border-primary/10">
+<h4 class="text-xs font-bold text-primary uppercase mb-2">Preventative Action</h4>
+<p class="text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                                Recalibrate pressure sensors on the <strong>S-400 Polisher</strong>. Misalignment detected in batch #COS-2023-08.
+                            </p>
+</div>
+<button class="w-full py-2 bg-primary text-white rounded font-medium text-sm hover:bg-primary/90 transition-colors">
+                            Apply Calibration
+                        </button>
+</div>
+</div>
+<!-- Reverse Traceability Timeline -->
+<div class="col-span-12 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-sm">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary">history</span>
+<h3 class="font-bold text-lg">Reverse Traceability Timeline</h3>
+</div>
+<div class="relative">
+<!-- Horizontal Line -->
+<div class="absolute top-1/2 left-0 w-full h-0.5 bg-slate-100 dark:bg-slate-800 -translate-y-1/2 hidden md:block"></div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+<!-- Step 1: Defect -->
+<div class="flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-full bg-red-100 text-red-600 flex items-center justify-center mb-4 z-10 border-4 border-white dark:border-slate-900 shadow-sm">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<div class="space-y-1">
+<p class="text-sm font-bold">Defect Detected</p>
+<p class="text-xs text-red-500 font-medium uppercase">Cracking</p>
+<p class="text-[11px] text-slate-400">Oct 24, 14:20</p>
+</div>
+</div>
+<!-- Step 2: Machine -->
+<div class="flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-full bg-blue-100 text-primary flex items-center justify-center mb-4 z-10 border-4 border-white dark:border-slate-900 shadow-sm">
+<span class="material-symbols-outlined">settings_suggest</span>
+</div>
+<div class="space-y-1">
+<p class="text-sm font-bold">Machine Analysis</p>
+<p class="text-xs text-primary font-medium uppercase">S-400 Polisher</p>
+<p class="text-[11px] text-slate-400">Oct 24, 11:00 (Shift B)</p>
+</div>
+</div>
+<!-- Step 3: Batch -->
+<div class="flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-full bg-blue-100 text-primary flex items-center justify-center mb-4 z-10 border-4 border-white dark:border-slate-900 shadow-sm">
+<span class="material-symbols-outlined">inventory_2</span>
+</div>
+<div class="space-y-1">
+<p class="text-sm font-bold">Batch Identification</p>
+<p class="text-xs text-primary font-medium uppercase">#COS-2023-08</p>
+<p class="text-[11px] text-slate-400">Oct 23, 09:15</p>
+</div>
+</div>
+<!-- Step 4: Raw Material -->
+<div class="flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-full bg-blue-100 text-primary flex items-center justify-center mb-4 z-10 border-4 border-white dark:border-slate-900 shadow-sm">
+<span class="material-symbols-outlined">conveyor_belt</span>
+</div>
+<div class="space-y-1">
+<p class="text-sm font-bold">Raw Material Intake</p>
+<p class="text-xs text-primary font-medium uppercase">Quartz Sand A-2</p>
+<p class="text-[11px] text-slate-400">Oct 20, 08:30</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Defects Table View (Implicit component needed for complete dashboard) -->
+<div class="col-span-12 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm">
+<div class="p-6 border-b border-slate-200 dark:border-slate-800">
+<h3 class="font-bold">Recent RCA Tickets</h3>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800/50">
+<th class="px-6 py-3 text-[11px] font-bold text-slate-500 uppercase tracking-wider">Ticket ID</th>
+<th class="px-6 py-3 text-[11px] font-bold text-slate-500 uppercase tracking-wider">Defect Type</th>
+<th class="px-6 py-3 text-[11px] font-bold text-slate-500 uppercase tracking-wider">Machine</th>
+<th class="px-6 py-3 text-[11px] font-bold text-slate-500 uppercase tracking-wider">Status</th>
+<th class="px-6 py-3 text-[11px] font-bold text-slate-500 uppercase tracking-wider">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr>
+<td class="px-6 py-4 text-sm font-medium">#RCA-9821</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">Cracks</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">S-400 Polisher</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-amber-100 text-amber-700 text-[10px] font-bold rounded uppercase">In Investigation</span>
+</td>
+<td class="px-6 py-4">
+<button class="text-primary hover:underline text-sm font-medium">View Details</button>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 text-sm font-medium">#RCA-9820</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">Edge Chipping</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">T-80 Cutting</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-green-100 text-green-700 text-[10px] font-bold rounded uppercase">Resolved</span>
+</td>
+<td class="px-6 py-4">
+<button class="text-primary hover:underline text-sm font-medium">View Details</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

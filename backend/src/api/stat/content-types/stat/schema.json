@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stats",
+  "info": {
+    "singularName": "stat",
+    "pluralName": "stats",
+    "displayName": "stat"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "total_batches": {
+      "type": "integer"
+    },
+    "total_pieces": {
+      "type": "integer"
+    },
+    "defects_found": {
+      "type": "decimal"
+    },
+    "accuracy": {
+      "type": "decimal"
+    }
+  }
+}

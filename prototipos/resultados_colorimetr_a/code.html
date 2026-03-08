@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cosentino Quality Tracker - Colorimetry Results</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1173d4",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="flex min-h-screen">
+<!-- Sidebar Navigation -->
+<aside class="w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col fixed h-full">
+<div class="p-6 flex items-center gap-3 border-b border-slate-100 dark:border-slate-800">
+<div class="size-10 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-sm font-bold leading-tight uppercase tracking-wider">Quality Tracker</h1>
+<p class="text-xs text-slate-500 dark:text-slate-400">Cosentino Systems</p>
+</div>
+</div>
+<nav class="flex-1 p-4 space-y-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="text-sm font-medium">Quality Tracker</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">colorize</span>
+<span class="text-sm font-medium">Colorimetry</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="text-sm font-medium">Reports</span>
+</a>
+<div class="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</div>
+</nav>
+<div class="p-4 border-t border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-3 px-2">
+<div class="size-8 rounded-full bg-slate-200 dark:bg-slate-700">
+<img alt="User Avatar" class="rounded-full" data-alt="Profile photo of the laboratory technician" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc02HIW-Az4QyfPEl0jx-Y9vRKV7RVViuQmjaXkXMQxQP2sDxJfAR0G6sHZ1bQIaaU6zAxfxvFEaBoDHkVECD3l12YNes1l-Xi53PwDD0M5HxxcfAy9kphNCeihXVccIZ9RMCWskHDKHVnmOjq6fX2YkRc-Fw2FKLhQX0VZbrDka2XAKQl7wf8Z8Elro4FRJYxo5WHj0sutlLN949NIimmT5EgFy4Yh3VSVCCy3Pzlov1L1SU8nd7B2PxhoqeS7zW3T8YJCgeR5fs"/>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-semibold">Operator #204</span>
+<span class="text-[10px] text-slate-500">Plant A - Morning Shift</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-64">
+<!-- Top Header -->
+<header class="h-16 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-8 sticky top-0 z-10">
+<div class="flex items-center gap-2 text-slate-500 text-sm">
+<span>Home</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span>Quality Tracker</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-primary font-medium">Colorimetry Results</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">search</span>
+<input class="pl-10 pr-4 py-1.5 rounded-lg border-none bg-slate-100 dark:bg-slate-800 focus:ring-2 focus:ring-primary text-sm w-64 transition-all" placeholder="Search batch ID..." type="text"/>
+</div>
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+</header>
+<!-- Content -->
+<div class="p-8 max-w-6xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+<div class="space-y-1">
+<h2 class="text-4xl font-black tracking-tight text-slate-900 dark:text-white uppercase">
+                            Slab ID: <span class="text-primary">L85-A2-B12</span>
+</h2>
+<p class="text-slate-500 dark:text-slate-400 text-lg">Detailed CIELAB colorimetric analysis for current production batch.</p>
+</div>
+<button class="flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-xl font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">compare_arrows</span>
+                        Comparar con Patrón Maestro
+                    </button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Slab Miniature Section -->
+<div class="lg:col-span-1 space-y-4">
+<div class="bg-white dark:bg-slate-900 p-3 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="aspect-square rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800 relative group">
+<img alt="Captured Slab" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="High resolution texture of a white marble slab" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxv8vOHL-4cae1350lyvMp1H9OzVezrM6DgNLnthHmbEgK8brhxpxTvF0x-bLY4gEyHJiAMPzgMovLNw6o2TgkEhCmrrUmVVA1vQ411ELT2UNvCAVLiTzfHsst8G2Xg6G-hA1dNVJvqtz0mzGef1DOmOdp5mA_p-vbgyIhHmBlzAOhzdVjK0q__P-rbDx0hIZfciyYoUALIYr8nTONgXoRxYXe4FLxosMvIuulPFqmtkeLJbtq47h89DecYIkQlGV2Ep2Clw4pv2Y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+<span class="text-white text-xs font-bold bg-white/20 backdrop-blur-md px-2 py-1 rounded">Camera: SENS-X42</span>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-center px-1">
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Captured Slab Miniature</p>
+<p class="text-xs text-slate-500">Batch ID: 2023-A98-012</p>
+</div>
+<span class="text-[10px] font-bold uppercase py-1 px-2 rounded-full bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">Captured OK</span>
+</div>
+</div>
+<!-- Coordinates Grid -->
+<div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- L Card -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between hover:border-primary/30 transition-colors">
+<div class="flex justify-between items-start mb-8">
+<div class="size-12 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-primary">
+<span class="text-2xl font-black">L*</span>
+</div>
+<span class="text-green-500 text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+                                    +0.4
+                                </span>
+</div>
+<div>
+<p class="text-5xl font-black text-slate-900 dark:text-white mb-1">85.4</p>
+<p class="text-xs font-semibold text-slate-500 uppercase tracking-widest">Lightness</p>
+</div>
+<div class="mt-4 h-1.5 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 85%"></div>
+</div>
+</div>
+<!-- a Card -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between hover:border-primary/30 transition-colors">
+<div class="flex justify-between items-start mb-8">
+<div class="size-12 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-primary">
+<span class="text-2xl font-black">a*</span>
+</div>
+<span class="text-red-500 text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">trending_down</span>
+                                    -0.1
+                                </span>
+</div>
+<div>
+<p class="text-5xl font-black text-slate-900 dark:text-white mb-1">2.1</p>
+<p class="text-xs font-semibold text-slate-500 uppercase tracking-widest">Red/Green</p>
+</div>
+<div class="mt-4 h-1.5 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 45%; margin-left: 50%;"></div>
+</div>
+</div>
+<!-- b Card -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between hover:border-primary/30 transition-colors">
+<div class="flex justify-between items-start mb-8">
+<div class="size-12 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-primary">
+<span class="text-2xl font-black">b*</span>
+</div>
+<span class="text-slate-400 text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">horizontal_rule</span>
+                                    0.0
+                                </span>
+</div>
+<div>
+<p class="text-5xl font-black text-slate-900 dark:text-white mb-1">12.7</p>
+<p class="text-xs font-semibold text-slate-500 uppercase tracking-widest">Yellow/Blue</p>
+</div>
+<div class="mt-4 h-1.5 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 62%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Info Section -->
+<div class="mt-8 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 flex flex-wrap items-center justify-between gap-6">
+<div class="flex items-center gap-8">
+<div>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Total Delta E (ΔE)</p>
+<div class="flex items-baseline gap-2">
+<span class="text-2xl font-black text-slate-900 dark:text-white">0.42</span>
+<span class="text-xs font-bold text-green-500 uppercase px-2 py-0.5 rounded-full bg-green-50 dark:bg-green-900/20">Within tolerance</span>
+</div>
+</div>
+<div class="w-px h-10 bg-slate-200 dark:bg-slate-800"></div>
+<div>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Scanning Station</p>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Production Line 4 - Section B</p>
+</div>
+<div class="w-px h-10 bg-slate-200 dark:bg-slate-800"></div>
+<div>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Timestamp</p>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Oct 24, 2023 14:32:11</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 text-sm font-bold text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">
+                            Download CSV
+                        </button>
+<button class="px-4 py-2 text-sm font-bold text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">
+                            Print Report
+                        </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
